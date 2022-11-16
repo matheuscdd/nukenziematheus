@@ -1,0 +1,49 @@
+.cont-input {
+    padding: 13px 16px;
+    background-color: var(--color-grey-1);
+    border-radius: 8px;
+    width: max-content;
+    border: 2px solid;
+    border-color: var(--color-grey-1);
+}
+
+.input-default input, .input-default input::placeholder  {
+    box-sizing:inherit;
+    font-family: var(--font-family-secondary);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: var(--font-weight-1);
+}
+
+.cont-input:has(input:focus) {
+    transition: 0.5s;
+    background-color: transparent;
+    border-color: var(--color-grey-5);
+} 
+
+.cont-input:has(input:not(:focus)) {
+    transition: 0.5s;
+    background-color: var(--color-grey-1);
+    border-color: var(--color-grey-1);
+} 
+
+.explanation {
+    display: block;
+    font-size: 12px;
+    font-weight: var(--font-weight-1);
+    margin-bottom: 12px;
+}
+
+.input-default small {
+    color: var(--color-grey-3);
+    font-size: 12px;
+    font-weight: var(--font-weight-1);
+    display: block;
+    margin-top: 4px;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}

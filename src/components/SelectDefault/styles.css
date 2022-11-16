@@ -1,0 +1,23 @@
+.select-default > select {
+    background-color: var(--color-grey-1);
+    font-family: var(--font-family-secondary);
+    font-size: 12px;
+    font-weight: var(--font-weight-1);
+    color: var(--color-grey-5);
+    padding: 11px 16px;
+    border-radius: 8px;
+    border: 1.2px solid;
+    border-color: var(--color-grey-1);
+}
+
+.select-default > label {
+    display: block;
+    font-size: 12px;
+    font-weight: var(--font-weight-1);
+    margin-bottom: 12px;
+}
+
+.select-default > select:focus {
+    border: 1.2px solid var(--color-grey-5);
+    outline: none;
+}
