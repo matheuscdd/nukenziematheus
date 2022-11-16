@@ -1,0 +1,23 @@
+.btn-main-color {
+    cursor: pointer;
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-weight-2);
+    font-size: 16px;
+    padding: 14.5px 97px;
+    border-radius: 8px;
+    border: none;
+    color: var(--color-grey-0);
+    background-color: var(--color-primary-1);
+}
+
+.btn-main-color:hover {
+    transition: 0.5s;
+    color: var(--color-grey-1);
+    background-color: var(--color-primary-2);
+}
+
+.btn-main-color:not(:hover) {
+    transition: 0.5s;
+    color: var(--color-grey-0);
+    background-color: var(--color-primary-1);
+}

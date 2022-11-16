@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import './reset.css';
+import './globalStyles.css';
+import Landing from './pages/Landing';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Teste</h1>
-        <h2>Comp</h2>
+    <div className='App'>
+
+        <Landing/>
+        {/* <Home/> */}
     </div>
   );
-}
+};
 
 export default App;

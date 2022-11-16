@@ -1,0 +1,18 @@
+.land-page {
+    background-color: var(--color-grey-5);
+}
+
+.land-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 48px;
+    height: 100vh;
+}
+
+@media (max-height: 600px) {
+    .land-main {
+        height: 100%;
+    }
+}
