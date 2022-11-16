@@ -1,18 +1,16 @@
 import './styles.css'; 
-import illustrationLanding from '../../assets/images/illustrationLanding.svg';
-import logo from '../../assets/images/logoLight.svg';
+import LandInfo from '../../components/LandInfo';
+import LandImg from '../../components/LandImg';
 
 function Landing() {
     return (
-        <main>
-            <section>
-                <img src={logo} alt="nu kenzie" />
-                <h1>Centralize o controle das suas finanças</h1>
-                
-            </section>
-            <img src={illustrationLanding} alt="imagem mostrando as funcionalidades do serviço de gerenciamento de finanças" />
-        </main>
+        <div className='land-page'>
+            <main className='container land-main'>
+                <LandInfo/>
+                <LandImg/>
+            </main>
+        </div>
     );
 };
 
-export default Landing
+export default Landing;
