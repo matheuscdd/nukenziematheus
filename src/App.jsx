@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import './reset.css';
+import './globalStyles.css';
+import Landing from './pages/Landing';
 
 function App() {
   return (
     <div className="App">
-      <h1>Teste</h1>
-        <h2>Comp</h2>
+      <div className='container'>
+        <Landing/>
+      </div>
+
     </div>
   );
 }
