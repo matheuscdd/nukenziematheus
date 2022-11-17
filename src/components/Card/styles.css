@@ -27,7 +27,6 @@
 }
 
 .card-title {
-    display: block;
     font-size: 16px;
     font-weight: var(--font-weight-4);
     line-height: 30px;
@@ -36,7 +35,6 @@
 }
 
 .card-value {
-    display: block;
     font-size: 12px;
     font-weight: var(--font-weight-1);
     line-height: 22px;
@@ -44,7 +42,6 @@
 }
 
 .card-kind {
-    display: block;
     font-size: 12px;
     font-weight: var(--font-weight-1);
     line-height: 22px;
@@ -69,4 +66,20 @@
     display: flex;
     gap: 50px;
     align-items: center;
+}
+
+.preloader h4 {
+    background-color: var(--color-grey-2);
+    width: 30%;
+    height: 13px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.preloader .card-kind {
+    background-color: var(--color-grey-2);
+    width: 10%;
+    height: 13px;
+    margin-top: 10px;
+    border-radius: 4px;
 }

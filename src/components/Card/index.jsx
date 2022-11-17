@@ -13,16 +13,26 @@ function Card({title, type, value, identifier, preloader}) {
         definition.kind = 'Despesa';
     };
     
+    let invisible = '';
+    let placeholder = '';
+    if (preloader) {
+        invisible = 'displayNone';
+        placeholder = 'preloader';
+        title = '';
+        type = '';
+        value = '';
+        definition.kind = '';
+    };
+
     return (
-        <li className='card'>
-            
+        <li className={'card ' + placeholder}>
             <div className='card-status' style={{ backgroundColor: definition.color }}></div>
             <div className="card-content">
                 <div className="card-info">
                     <h4 className='card-title'>{title}</h4>
                     <div className='card-details'>
-                        <span className='card-value'>{valueReal(value)}</span>
-                        <BtnDelete id={identifier}/>
+                        <span className={'card-value ' + invisible} >{valueReal(value)}</span>
+                        <BtnDelete id={identifier} classe={invisible}/>
                     </div>
                 </div>
                 <span className='card-kind'>{definition.kind}</span>

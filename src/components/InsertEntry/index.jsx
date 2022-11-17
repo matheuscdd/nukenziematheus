@@ -4,8 +4,11 @@ import SelectDefault from '../SelectDefault';
 import BtnMainColor from '../BtnMainColor';
 
 function InsertEntry() {
+    function handleSubmit(event) {
+        event.preventDefault();
+    };
     return (
-        <form className='new-entry'>
+        <form className='new-entry' onSubmit={handleSubmit}>
             <InputDefault placeholder='Digite aqui sua descrição' id='description' type='text' label='Descrição' legend='Ex: Compra de roupas' widthInput={275}/>
             <div className='cont-entry-details'>
                 <InputDefault placeholder={1} id='valueEntry' type='number' label='Valor' example='R$' widthInput={80}/>

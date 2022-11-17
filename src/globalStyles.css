@@ -38,6 +38,10 @@ body {
     max-width: 122px;
 }
 
+.displayNone {
+    display: none;
+}
+
 @media (max-width: 1230px) {
     .container {
         margin: 0 100px;
