@@ -52,6 +52,8 @@ function Home() {
         copysEntries.splice(position, 1);
         console.log(copysEntries);
         setEntries([...copysEntries]);
+        const listOnlyNum = copysEntries.map(({price}) => price);
+        setJustPrices([...listOnlyNum]);
     };
     
     return (
