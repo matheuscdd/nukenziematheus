@@ -14,3 +14,9 @@
     font-weight: var(--font-weight-4);
     line-height: 30px;
 }
+
+@media (max-width: 900px) {
+    .category-choice > h3 {
+        font-size: 12px;
+    }
+}

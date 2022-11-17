@@ -12,7 +12,7 @@ function InsertEntry({setPrice, setChoice, setTitle, handleSubmit}) {
                 <InputDefault placeholder={1} id='valueEntry' type='number' label='Valor' example='R$' widthInput={80}  action={setPrice}/>
                 <SelectDefault label='Tipo de valor' explanation='Selecione' options={[{id: 1, name: 'Entrada', type: 'income'}, {id: 2, name: 'Despesa', type: 'expense'}]} identifier='select' action={setChoice}/>
             </div>
-            <BtnMainColor content='Inserir valor'/>
+            <BtnMainColor content='Inserir valor' action={() => console.log('oi')}/>
         </form>
     );
 };

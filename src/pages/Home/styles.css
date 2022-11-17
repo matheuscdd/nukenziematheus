@@ -11,3 +11,9 @@
 .home-categories-and-entries {
     width: 100%;
 }
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
