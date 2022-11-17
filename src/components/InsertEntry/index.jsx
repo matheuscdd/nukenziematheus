@@ -12,7 +12,7 @@ function InsertEntry() {
             <InputDefault placeholder='Digite aqui sua descrição' id='description' type='text' label='Descrição' legend='Ex: Compra de roupas' widthInput={275}/>
             <div className='cont-entry-details'>
                 <InputDefault placeholder={1} id='valueEntry' type='number' label='Valor' example='R$' widthInput={80}/>
-                {/* <SelectDefault label='Tipo de valor' explanation='Selecione' options={[{name: 'Entrada', type: 'income'}, {name: 'Despesa', type: 'expense'}]}/> */}
+                <SelectDefault label='Tipo de valor' explanation='Selecione' options={[{id: 1, name: 'Entrada', type: 'income'}, {id: 2, name: 'Despesa', type: 'expense'}]} identifier='select'/>
             </div>
             <BtnMainColor content='Inserir valor'/>
         </form>
