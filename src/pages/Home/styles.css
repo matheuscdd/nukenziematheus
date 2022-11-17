@@ -1,8 +1,13 @@
 .main-content {
     display: flex;
     justify-content: space-between;
+    gap: 60px;
 }
 
-.home-page > .home-new-and-status {
+.home-new-and-status {
     width: 365px;
+}
+
+.home-categories-and-entries {
+    width: 100%;
 }

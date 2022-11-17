@@ -9,7 +9,7 @@ function SelectDefault({id, label, explanation, options}) {
                     {
                     options.map((el, index) => 
                         <>
-                            <option value={el.toLowerCase()} key={index}>{el}</option>
+                            <option value={el.type} key={index}>{el.name}</option>
                         </>
                     )
                     }

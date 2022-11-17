@@ -14,7 +14,7 @@ function Home() {
                     <InsertEntry/>
                     <TotalValue priceAll={2000}/>
                 </section>
-                <section>
+                <section className='home-categories-and-entries'>
                     <CategoryChoice/>
                     <AncientEntries/>
                 </section>
