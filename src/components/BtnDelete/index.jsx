@@ -1,8 +1,8 @@
 import './styles.css';
 
-function BtnDelete({id, action, classe}) {
+function BtnDelete({uuid, action, classe}) {
     return (
-        <button className={'btn-delete ' + classe} onClick={() => action}></button>
+        <button className={'btn-delete ' + classe} onClick={() => action(uuid)}></button>
     );
 };
 

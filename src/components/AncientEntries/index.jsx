@@ -13,11 +13,11 @@ function AncientEntries({entriesList, action}) {
     );
 };
 
-function renderCards(array, action) {
+function renderCards(array, fun) {
     return (
         <>
         {
-            array.map(({title, price, choice, uuid}, index) => <Card title={title} value={Number(price)} type={choice} key={index} action={action(uuid)}/>)
+            array.map(({title, price, choice, uuid}, index) => <Card title={title} value={Number(price)} type={choice} key={index} action={fun} identifier={uuid}/>)
         }
         </>
     );

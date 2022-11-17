@@ -32,7 +32,7 @@ function Card({title, type, value, identifier, preloader, action}) {
                     <h4 className='card-title'>{title}</h4>
                     <div className='card-details'>
                         <span className={'card-value ' + invisible} >{valueReal(value)}</span>
-                        <BtnDelete id={identifier} classe={invisible} action={action}/>
+                        <BtnDelete uuid={identifier} classe={invisible} action={action}/>
                     </div>
                 </div>
                 <span className='card-kind'>{definition.kind}</span>

@@ -46,6 +46,13 @@ function Home() {
         console.log(entries)
     };
 
+    function deleteThis(identifier) {
+        const copysEntries = [...entries];
+        const position = copysEntries.findIndex(({uuid}) => uuid === identifier);
+        copysEntries.splice(position, 1);
+        console.log(copysEntries);
+        setEntries([...copysEntries]);
+    };
     
     return (
         <div className='home-page'>
@@ -60,7 +67,7 @@ function Home() {
                 </section>
                 <section className='home-categories-and-entries'>
                     <CategoryChoice/>
-                    <AncientEntries entriesList={entries} action={console}/>
+                    <AncientEntries entriesList={entries} action={deleteThis}/>
                 </section>
             </main>
         </div>
