@@ -21,3 +21,8 @@
     color: var(--color-grey-4);
     background-color: var(--color-grey-2);
 } 
+
+.btn-grey-color-clicked:not(:hover) {
+    color: var(--color-grey-1);
+    background-color: var(--color-primary-2);
+}
