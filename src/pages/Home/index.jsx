@@ -7,15 +7,14 @@ import CategoryChoice from '../../components/CategoryChoice';
 import { useState } from 'react';
 
 
-function Home() {
+function Home({action}) {
 
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [choice, setChoice] = useState('');
     const [entries, setEntries] = useState([]);
     const [justPrices, setJustPrices] = useState([]);
-    
-    
+    const [currentList, setCurrentList] = useState([]);
 
     function addValue() {
         if (choice === '' || title === '' || price === '') {
@@ -28,22 +27,19 @@ function Home() {
             'uuid': Math.random()
         };
         if (choice === 'expense') {
-            let num = entry.price * -1
-            entry.price = num
-        }
+            let num = entry.price * -1;
+            entry.price = num;
+        };
         setJustPrices([...justPrices, entry.price]);
-        
         setEntries([...entries, entry]);
         
     };
-
-
-    
-    
+  
     function handleSubmit(event) {
+
         event.preventDefault();
         addValue();
-        console.log(entries)
+        console.log(entries);
     };
 
     function deleteThis(identifier) {
@@ -54,11 +50,25 @@ function Home() {
         setEntries([...copysEntries]);
         const listOnlyNum = copysEntries.map(({price}) => price);
         setJustPrices([...listOnlyNum]);
+        setCurrentList([...copysEntries])
     };
     
+    function renderJust(name) {
+      
+        if (name === 'Todos') {
+            setCurrentList([...entries]);
+        } else if (name === 'Entradas') {
+            let listIncomes = entries.filter(({choice}) => choice === 'income');
+            setCurrentList([...listIncomes]);
+        } else if (name === 'Despesas') {
+            let listExpenses = entries.filter(({choice}) => choice === 'expense');
+            setCurrentList([...listExpenses]);
+        };
+    };
+
     return (
         <div className='home-page'>
-            <HeadHome/>
+            <HeadHome fun={() => action()}/>
             <main className='container main-content'>
                 <section className='home-new-and-status'>
                     <InsertEntry setTitle={setTitle} setPrice={setPrice} setChoice={setChoice} handleSubmit={handleSubmit}/>
@@ -68,8 +78,8 @@ function Home() {
                     
                 </section>
                 <section className='home-categories-and-entries'>
-                    <CategoryChoice/>
-                    <AncientEntries entriesList={entries} action={deleteThis}/>
+                    <CategoryChoice action={renderJust}/>
+                    <AncientEntries entriesList={currentList} action={deleteThis}/>
                 </section>
             </main>
         </div>

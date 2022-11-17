@@ -1,7 +1,7 @@
 import './styles.css';
 import BtnGreyColor from '../BtnGreyColor';
 
-function CategoryChoice() {
+function CategoryChoice({action}) {
     const btnsNames = ['Todos', 'Entradas', 'Despesas'];
     return (
         <div className='category-choice'>
@@ -9,7 +9,7 @@ function CategoryChoice() {
             <div className='category-choice-btns'>
                 {
                     btnsNames.map((name, index) => 
-                    <BtnGreyColor content={name} key={index}/>
+                    <BtnGreyColor content={name} key={index} action={action}/>
                     )
                 }
             </div>
