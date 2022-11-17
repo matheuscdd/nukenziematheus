@@ -2,7 +2,7 @@ import './styles.css';
 import BtnDelete from '../BtnDelete';
 import valueReal from '../../generalFunctions';
 
-function Card({title, type, value, identifier, preloader}) {
+function Card({title, type, value, identifier, preloader, action}) {
     let definition = { color: '', kind: '' };
 
     if (type === 'income') {
@@ -32,7 +32,7 @@ function Card({title, type, value, identifier, preloader}) {
                     <h4 className='card-title'>{title}</h4>
                     <div className='card-details'>
                         <span className={'card-value ' + invisible} >{valueReal(value)}</span>
-                        <BtnDelete id={identifier} classe={invisible}/>
+                        <BtnDelete id={identifier} classe={invisible} action={action}/>
                     </div>
                 </div>
                 <span className='card-kind'>{definition.kind}</span>
