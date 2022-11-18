@@ -1,0 +1,21 @@
+.land-info {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: var(--font-weight-5);
+    line-height: 48px;
+}
+
+legend {
+    font-size: 16px;
+    font-weight: var(--font-weight-1);
+    line-height: 26px;
+}
+
+h1, legend {
+    color: var(--color-grey-0);
+}

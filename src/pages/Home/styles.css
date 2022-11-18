@@ -1,0 +1,22 @@
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.home-new-and-status {
+    width: 365px;
+}
+
+.home-categories-and-entries {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .home-new-and-status {
+        width: 100%;
+    }
+}

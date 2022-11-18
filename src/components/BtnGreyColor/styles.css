@@ -1,0 +1,38 @@
+.btn-default {
+    cursor: pointer;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-3);
+    font-size: 14px;
+    padding: 10.5px 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-grey-color {
+    color: var(--color-grey-4);
+    background-color: var(--color-grey-2);
+}
+
+.btn-grey-color:hover {
+    transition: 0.5s;
+    color: var(--color-grey-1);
+    background-color: var(--color-grey-4);
+} 
+
+.btn-grey-color:not(:hover) {
+    transition: 0.5s;
+    color: var(--color-grey-4);
+    background-color: var(--color-grey-2);
+} 
+
+.btn-default-clicked:not(:hover) {
+    transition: 0.5s;
+    color: var(--color-grey-1);
+    background-color: var(--color-primary-2);
+}
+
+.btn-default-clicked:hover {
+    transition: 0.5s;
+    color: var(--color-grey-1);
+    background-color: var(--color-primary-2);
+}

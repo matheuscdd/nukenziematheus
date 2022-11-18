@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary-1: #FD377E;
+    --color-primary-2: #E34981;
+    --color-secondary-1: #03B898;
+    
+    --color-grey-0: #FFFFFF;
+    --color-grey-1: #F8F9FA;
+    --color-grey-2: #E9ECEF;
+    --color-grey-3: #868E96;
+    --color-grey-4: #343A40;
+    --color-grey-5: #212529;
+
+
+    --font-family-primary: 'Nunito', sans-serif;
+    --font-family-secondary: 'Inter', sans-serif;
+
+    --font-weight-1: 400;
+    --font-weight-2: 500;
+    --font-weight-3: 600;
+    --font-weight-4: 700;
+    --font-weight-5: 800;
+    --font-weight-6: 900;
+
+}
+
+body {
+    font-family: var(--font-family-primary);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.logo {
+    max-width: 122px;
+}
+
+.displayNone {
+    display: none;
+}
+
+@media (max-width: 1230px) {
+    .container {
+        margin: 0 100px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin: 0 15px;
+    }
+}

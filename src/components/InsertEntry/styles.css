@@ -1,0 +1,20 @@
+.new-entry {
+    padding: 38px 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border: 1px solid var(--color-grey-2);
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.cont-entry-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-entry button {
+    width: 100%;
+}
+
