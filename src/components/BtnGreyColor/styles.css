@@ -23,6 +23,13 @@
 } 
 
 .btn-grey-color-clicked:not(:hover) {
+    cursor: pointer;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-3);
+    font-size: 14px;
+    padding: 10.5px 15px;
+    border-radius: 8px;
+    border: none;
     color: var(--color-grey-1);
     background-color: var(--color-primary-2);
 }

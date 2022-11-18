@@ -16,6 +16,7 @@ function Home({action}) {
     const [justPrices, setJustPrices] = useState([]);
     const [currentList, setCurrentList] = useState([]);
     const [currentName, setCurrentName] = useState('Todos');
+    const [trying, setTrying] = useState([]);
 
     function addValue() {
         
@@ -34,9 +35,6 @@ function Home({action}) {
         };
         setJustPrices([...justPrices, entry.price]);
         setEntries([...entries, entry]);
-        upgradeHTML();
-
-        console.log(entries);
         renderJust('Todos');
     };
     function handleSubmit(event) {
@@ -64,15 +62,10 @@ function Home({action}) {
 
     function renderJust(name) {
         if (name === 'Todos') {
-            setCurrentList([...entries]);
             setCurrentName('Todos');
         } else if (name === 'Entradas') {
-            let listIncomes = entries.filter(({choice}) => choice === 'income');
-            setCurrentList([...listIncomes]);
             setCurrentName('Entradas');
         } else if (name === 'Despesas') {
-            let listExpenses = entries.filter(({choice}) => choice === 'expense');
-            setCurrentList([...listExpenses]);
             setCurrentName('Despesas');
         };
     };
@@ -89,8 +82,15 @@ function Home({action}) {
                 </section>
                 <section className='home-categories-and-entries'>
                     <CategoryChoice action={renderJust}/>
+
+                    <AncientEntries entriesList={
+                        currentName === 'Despesas'?
+                        entries.filter(({choice}) => choice === 'expense') :
+                        currentName === 'Entradas'?
+                        entries.filter(({choice}) => choice === 'income') :
+                        entries
+                    } action={deleteThis}/> 
                     
-                    <AncientEntries entriesList={currentList} action={deleteThis}/>
                 </section>
             </main>
         </div>
