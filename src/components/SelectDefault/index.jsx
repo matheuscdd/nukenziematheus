@@ -1,16 +1,14 @@
 import './styles.css';
 
-function SelectDefault({id, label, explanation, options}) {
+function SelectDefault({identifier, label, explanation, options, action}) {
     return (
         <div className='select-default'>
-            <label htmlFor={id}>{label}</label>
-            <select>
-                <option value="" style={{display: 'none'}}>{explanation}</option>
+            <label htmlFor={identifier}>{label}</label>
+            <select id={identifier} onChange={(event) => action(event.target.value)}>
+                <option value="" className='displayNone' key='22'>{explanation}</option>
                     {
                     options.map((el, index) => 
-                        <>
-                            <option value={el.type} key={index}>{el.name}</option>
-                        </>
+                            <option value={el.type} key={el.id}>{el.name}</option>
                     )
                     }
             </select>
