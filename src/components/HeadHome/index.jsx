@@ -8,7 +8,7 @@ function HeadHome({fun}) {
         <header>
                 <div className='container home-head'>
                     <img src={logo} alt='nu kenzie' className='logo'/>
-                    <BtnGreyColor content='Início' action={() => fun()}/>
+                    <BtnGreyColor content='Início' action={() => fun()} isLand={true}/>
                 </div>
         </header>
     );

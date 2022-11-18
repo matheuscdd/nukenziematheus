@@ -28,7 +28,6 @@ function noCards() {
     return (
         <>
             <p>Você não colocou nenhum lançamento</p>
-            {/* <Card title='Sou um teste' type='income' value={200} identifier={30}/> */}
             {cardsNumbers.map((el, index) => 
                 <Card preloader key={index}/>
             )}

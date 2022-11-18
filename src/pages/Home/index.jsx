@@ -14,9 +14,8 @@ function Home({action}) {
     const [choice, setChoice] = useState('');
     const [entries, setEntries] = useState([]);
     const [justPrices, setJustPrices] = useState([]);
-    const [currentList, setCurrentList] = useState([]);
     const [currentName, setCurrentName] = useState('Todos');
-    const [trying, setTrying] = useState([]);
+    const [currentFilter, setCurrentFilter] = useState('Todos');
 
     function addValue() {
         
@@ -41,23 +40,34 @@ function Home({action}) {
 
         event.preventDefault();
         addValue();
-        
-        upgradeHTML();
+
     };
 
-    function deleteThis(identifier) {
-        const copysEntries = [...entries];
-        const position = copysEntries.findIndex(({uuid}) => uuid === identifier);
-        copysEntries.splice(position, 1);
-        console.log(copysEntries);
-        setEntries([...copysEntries]);
-        const listOnlyNum = copysEntries.map(({price}) => price);
-        setJustPrices([...listOnlyNum]);
-        setCurrentList([...copysEntries]);
+    function entradaB() {
+        setCurrentFilter('Entradas');
+    };
+
+    function saidaB() {
+        setCurrentFilter('Despesas');
+    };
+
+    function todosB() {
+        setCurrentFilter('Todos');
     };
     
-    function upgradeHTML() {
-        setCurrentList([...entries]);
+
+    function deleteThis(identifier) {
+        const copysEntries = [...entries];//filter
+        const listWithoutHim = copysEntries.filter(({uuid}) => uuid !== identifier);
+        setEntries([...listWithoutHim]);
+        const listOnlyNum = listWithoutHim.map(({price}) => price);
+        setJustPrices([...listOnlyNum]);
+
+    };
+    
+    function changeThisBtn(num) {
+        console.log(num)
+        // setCurrentBtn
     };
 
     function renderJust(name) {
@@ -70,6 +80,17 @@ function Home({action}) {
         };
     };
 
+    const filterItems = entries.filter((el) => {
+        if (currentFilter === 'Entradas') {
+            return el.choice === 'income';
+        } else if (currentFilter === 'Despesas') {
+            return el.choice === 'expense';
+        } else {
+            return el;
+        };
+    });
+
+    
     return (
         <div className='home-page'>
             <HeadHome fun={() => action()}/>
@@ -81,15 +102,10 @@ function Home({action}) {
                     
                 </section>
                 <section className='home-categories-and-entries'>
-                    <CategoryChoice action={renderJust}/>
+                    <CategoryChoice action={renderJust} fun={changeThisBtn} eb={entradaB} sb={saidaB} tb={todosB} currentFilter={currentFilter}/>
 
-                    <AncientEntries entriesList={
-                        currentName === 'Despesas'?
-                        entries.filter(({choice}) => choice === 'expense') :
-                        currentName === 'Entradas'?
-                        entries.filter(({choice}) => choice === 'income') :
-                        entries
-                    } action={deleteThis}/> 
+                    
+                    <AncientEntries entriesList={filterItems} action={deleteThis}/> 
                     
                 </section>
             </main>
