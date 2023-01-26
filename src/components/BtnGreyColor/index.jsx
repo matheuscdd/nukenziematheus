@@ -10,9 +10,7 @@ function BtnGreyColor({content, action, fun, orderBtn, on, className, isLand}) {
         <div>
             <button  className={'btn-default ' + className} onClick={() => {
                 action(content);
-                if (isLand) {
-                    console.log('');
-                } else {
+                if (!isLand) {
                     categoryFun();
                 };
                 }}>
